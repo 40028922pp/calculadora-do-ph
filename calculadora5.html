@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>black dark</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+
+    button{
+        width: 45px;
+        height: 45px;
+        border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+    }
+
+    #caixa{
+        display: flex
+;
+    align-items: flex-start;
+    width: 300px;
+    height: 300px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: flex-start;
+    }
+    .calculadora {
+            background-color: #8d8d8d;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 189px;;
+            height: 300px;
+        }
+        button:hover {
+            background-color: #3d3d3d;
+        }
+
+    .botC{
+        background-color: #3d3d3d;
+    }
+    </style>
+
+    <script>
+
+        var n1 = 0;
+        var n2 = 0;
+        var operador;
+
+        function btn_(parametro){
+        
+        if(document.getElementById("resultado").innerHTML == 0){
+        document.getElementById("resultado").innerHTML = parametro;
+        }
+        else{
+        document.getElementById("resultado").innerHTML += parametro;
+        }
+
+        }
+
+
+
+
+
+
+        function adicionar() {
+            operador = "+";
+            n1 = document.getElementById("resultado").innerHTML;
+            document.getElementById("resultado").innerHTML = 0;
+        }
+
+        function diminuir() {
+            operador = "-";
+            n1 = document.getElementById("resultado").innerHTML;
+            document.getElementById("resultado").innerHTML = 0;
+        }
+
+        function multiplicar() {
+            operador = "*";
+            n1 = document.getElementById("resultado").innerHTML;
+            document.getElementById("resultado").innerHTML = 0;
+        }
+
+        function divisão() {
+            operador = "/";
+            n1 = document.getElementById("resultado").innerHTML;
+            document.getElementById("resultado").innerHTML = 0;
+        }
+
+        function resultado(){
+            n2 = document.getElementById("resultado").innerHTML;
+
+            if(operador == "+") document.getElementById("resultado").innerHTML = Number(n1) + Number(n2);
+
+
+            if(operador == "-") document.getElementById("resultado").innerHTML = Number(n1) - Number(n2);
+
+
+
+            if(operador == "*") document.getElementById("resultado").innerHTML = Number(n1) * Number(n2);
+
+
+
+
+            if(operador == "/") document.getElementById("resultado").innerHTML = Number(n1) / Number(n2);
+
+        }
+
+
+    </script>
+
+
+</head>
+<body>
+<div class="calculadora">
+    <div id="caixa">
+    <p style="color: white;" id="resultado">0</p>
+    <div>
+    <button onclick="location.reload()" class="botC">C</button> 
+
+    <button onclick="divisão()" class="botC">÷</button>
+
+    <button onclick="multiplicar()" class="botC">x</button>
+
+    <button onclick="resultado()" class="botC">=</button>
+
+    </div>
+
+
+    <div>
+    <button onclick="btn_(7)">7</button>
+
+    <button onclick="btn_(8)">8</button>
+
+    <button onclick="btn_(9)">9</button>
+
+    <button onclick="diminuir()" class="botC">-</button>
+    </div>
+
+    <div>
+    <button onclick="btn_(4)">4</button>
+
+    <button onclick="btn_(5)">5</button>
+
+    <button onclick="btn_(6)">6</button>
+
+    <button onclick="adicionar()" class="botC">+</button>
+    </div>
+
+    <div>
+    <button onclick="btn_(1)">1</button>
+
+    <button onclick="btn_(2)">2</button>
+
+    <button onclick="btn_(3)">3</button>
+
+    <button onclick="btn_(0)">0</button>
+    </div>
+
+</div>
+</div>
+
+</body>
+</html>
